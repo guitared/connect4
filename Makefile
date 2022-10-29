@@ -17,5 +17,3 @@ generator: generator.o
 
 clean:
 	rm -f *.o .depend c4solver generator
-
-
