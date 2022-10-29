@@ -1,21 +1,3 @@
-/*
- * This file is part of Connect4 Game Solver <http://connect4.gamesolver.org>
- * Copyright (C) 2017-2019 Pascal Pons <contact@gamesolver.org>
- *
- * Connect4 Game Solver is free software: you can redistribute it and/or
- * modify it under the terms of the GNU Affero General Public License as
- * published by the Free Software Foundation, either version 3 of the
- * License, or (at your option) any later version.
- *
- * Connect4 Game Solver is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with Connect4 Game Solver. If not, see <http://www.gnu.org/licenses/>.
- */
-
 #ifndef OPENING_BOOK_HPP
 #define OPENING_BOOK_HPP
 
@@ -24,8 +6,7 @@
 #include "Position.hpp"
 #include "TranspositionTable.hpp"
 
-namespace GameSolver {
-namespace Connect4 {
+namespace GameSolver { namespace Connect4 {
 
 class OpeningBook {
   TableGetter<Position::position_t, uint8_t> *T;
@@ -71,9 +52,9 @@ class OpeningBook {
   }
 
  public:
-  OpeningBook(int width, int height) : T{0}, width{width}, height{height}, depth{ -1} {} // Empty opening book
+  OpeningBook(int width, int height) : T{0}, width{width}, height{height}, depth{ -1} {}
 
-  OpeningBook(int width, int height, int depth, TableGetter<Position::position_t, uint8_t>* T) : T{T}, width{width}, height{height}, depth{depth} {} // Empty opening book
+  OpeningBook(int width, int height, int depth, TableGetter<Position::position_t, uint8_t>* T) : T{T}, width{width}, height{height}, depth{depth} {}
   /**
     * Opening book file format:
     * - 1 byte: board width
@@ -178,6 +159,5 @@ class OpeningBook {
   }
 };
 
-} // namespace Connect4
-} // namespace GameSolver
+}}
 #endif
